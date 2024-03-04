@@ -1,0 +1,33 @@
+@model midterm_project.Models.Dog
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>
+    @Model?.Name
+</h1>
+<div class="detail-wrapper">
+    <div class="col-6">  
+        <img src="@Model?.ImgUrl" width="350px">
+    </div>
+    <div class="col-6">  
+        <b>Breed:</b> @Model?.Breed
+    </div>
+    <div class="col-6">  
+        <b>Gendre:</b> @Model?.Gendre
+    </div>
+    <div class="col-6">  
+        <b>Description:</b> @Model?.Description
+    </div>
+    <hr>
+    <div class="col-12">   
+        <a class="btn btn-sm btn-light" asp-controller="Dog" asp-action="List">Back</a>
+        <a class="btn btn-sm btn-secondary mb-3 ml-3 float-end"
+            asp-controller="Dog" asp-action="Edit" asp-route-id="@Model?.DogId">
+            Edit
+        </a>
+    </div>
+</div>
+
+

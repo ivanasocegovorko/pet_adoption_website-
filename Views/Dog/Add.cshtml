@@ -1,0 +1,17 @@
+@model midterm_project.Models.Dog
+
+@{
+    ViewData["Title"] = "Add Dog";
+}
+
+<div class="resume-wrapper">
+    <form asp-controller="Dog" asp-action="Add" method="post">
+        <h1 class="display-4 text-center mb-5">Add New Dog</h1>
+
+        @await Html.PartialAsync("_DogInput", Model)
+
+        <input type="submit" class="btn btn-sm btn-primary float-end" value="Save">
+    </form>
+
+    <a class="btn btn-sm btn-light" asp-controller="Dog" asp-action="List">Back</a>
+</div>
